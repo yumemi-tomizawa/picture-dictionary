@@ -1,7 +1,20 @@
 :root {
   --primary-color: #f4e9e9;
+  --dark-color: #000;
+  --gray-color: #e2dcdc;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   background: var(--primary-color);
+  font-family: "Roboto", sans-serif;
+}
+
+hr {
+  border: 1px solid var(--gray-color);
 }
