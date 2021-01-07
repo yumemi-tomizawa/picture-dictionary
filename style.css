@@ -43,6 +43,10 @@ h1 {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .container {
   max-width: var(--max-width);
   padding: 0 1.5rem;
@@ -55,6 +59,7 @@ h1 {
   position: relative;
   width: 90%;
   height: 45px;
+  margin: auto;
 }
 
 #search-bar input {
@@ -92,4 +97,22 @@ h1 {
 
 #search-bar #search-icon .fa-search:hover {
   opacity: 0.7;
+}
+
+/* Search Result */
+#search-result #search-word {
+  font-weight: 100;
+  font-size: 30px;
+}
+
+#search-result #search-word,
+#search-result > div {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 0.5rem;
+}
+
+#search-result #word-def {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }

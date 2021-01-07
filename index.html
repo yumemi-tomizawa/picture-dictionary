@@ -3,37 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous"
     />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Font weight Regular 400 -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <!-- Font weight Light 300 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Picture Dictionary</title>
   </head>
   <body>
-    <section id="home-a" class="text-center py-2">
+    <section id="home-a" class="py-2">
       <div class="container">
-        <div class="container">
+        <div class="container text-center">
           <h1 id="heading">Picture Dictionary</h1>
           <div id="search-bar">
             <input type="text" id="search-box" placeholder="Search English" />
             <div id="search-icon"><i class="fas fa-search"></i></div>
           </div>
         </div>
-        <div id="main-content">
-          <h3 id="search-word">Search</h3>
-          <a href="#"><i class="fas fa-book"></i></a>
-          <p id="word-def">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-            commodi.
-          </p>
+        <div id="main-content text-left">
+          <div id="search-result">
+            <h3 id="search-word">Search</h3>
+            <div><i class="fas fa-book"></i></div>
+            <p id="word-def">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+              commodi.
+            </p>
+          </div>
         </div>
         <hr />
         <br />
