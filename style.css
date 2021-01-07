@@ -105,6 +105,10 @@ h1 {
   font-size: 30px;
 }
 
+#search-result > div .fa-book {
+  color: var(--navyblue-color);
+}
+
 #search-result #search-word,
 #search-result > div {
   display: inline-block;
@@ -113,6 +117,8 @@ h1 {
 }
 
 #search-result #word-def {
+  font-weight: 300;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
   line-height: 1.4;
 }
