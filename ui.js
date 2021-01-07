@@ -5,10 +5,10 @@ class UI {
 
     displayPicture(pictures) {
         if(pictures.totalHits > 0) {
-            pictures.hits.forEach(pic => {
+            pictures.hits.forEach((pic, index)=> {
                 console.log('pic:', pic);
-                this.pictureGrid.innerHTML = `
-                    <div class="picture">
+                this.pictureGrid.innerHTML += `
+                    <div id="pic-${index}" class="picture">
                         <img src="${pic.previewURL}">
                     </div>
                 `;
