@@ -58,6 +58,10 @@ img {
   overflow: hidden;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* Search Bar */
 #search-bar {
   position: relative;
