@@ -31,7 +31,7 @@ h3 {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 img {
@@ -52,8 +52,7 @@ img {
 }
 
 .container {
-  max-width: var(--max-width);
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   margin: auto;
   overflow: hidden;
 }
@@ -63,10 +62,14 @@ img {
 }
 
 /* Search Bar */
+#heading {
+  font-size: 1.5rem;
+}
+
 #search-bar {
   position: relative;
-  width: 90%;
-  height: 45px;
+  width: 100%;
+  height: 40px;
   margin: auto;
 }
 
@@ -75,7 +78,9 @@ img {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   padding: 0.6rem 1rem;
+  font-size: 0.8rem;
   border-radius: 50px;
   border: 1px solid var(--pink-color);
   outline: none;
@@ -86,7 +91,8 @@ img {
   position: absolute;
   top: 0;
   right: 0px;
-  width: 40px;
+  width: 15%;
+  height: 100%;
   padding: 0.55rem 1rem;
   border-radius: 50px;
   background: var(--pink-color);
@@ -97,7 +103,7 @@ img {
 
 #search-bar #search-icon .fa-search {
   color: var(--navyBlue-color);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   z-index: 1;
   transition: opacity 500ms;
@@ -108,9 +114,17 @@ img {
 }
 
 /* Search Result */
+#search-result {
+  margin-top: 15px;
+}
+
 #search-result #search-word {
   font-weight: 100;
-  font-size: 30px;
+  font-size: 2.1rem;
+}
+
+#search-result > div {
+  font-size: 1.5rem;
 }
 
 #search-result > div .fa-volume-up,
@@ -127,7 +141,7 @@ img {
 #search-result #search-word,
 #search-result > div {
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 9px;
   margin-bottom: 0.5rem;
 }
 
