@@ -4,10 +4,7 @@ class UI {
     }
 
     displayDefinition(def) {
-        const whatFK = def;
-        console.log('whatFK:', whatFK.title)
         if(def.title === undefined) {
-             console.log('Enter if:', def)
              const word = def[0].word;
              const definition = def[0].meanings[0].definitions[0].definition;
              const audioURL = def[0].phonetics[0].audio
@@ -22,19 +19,21 @@ class UI {
              audioTag.src = audioURL;
              audioIcon.appendChild(audioTag);
         }else if(def.title === "No Definitions Found") {
-            throw "No Definitions Found";
+            throw "Sorry... No Definitions Found";
         }
     }
 
     displayPicture(pictures) {
         if(pictures.totalHits > 0) {
+            let output = '';
             pictures.hits.forEach((pic, index)=> {
-                console.log('pic:', pic);
-                this.pictureGrid.innerHTML += `
+                // console.log('pic:', pic);
+                output += `
                     <div id="pic-${index}" class="picture">
                         <img src="${pic.previewURL}">
                     </div>
                 `;
+                this.pictureGrid.innerHTML = output;
             })
         }else {
             // No picture to display

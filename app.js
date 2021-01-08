@@ -38,10 +38,18 @@ function searchPicture() {
                     ui.displayDefinition(def);
                     const pictures = res[1];
                     ui.displayPicture(pictures);
+                    mainContent.classList.remove('hidden');
                 }catch(err) {
+                    mainContent.classList.add('hidden');
                     const errMsg = document.createElement('h1');
                     errMsg.textContent = err;
-                    mainContent.prepend(errMsg);
+                    errMsg.id = 'err';
+                    errMsg.textContent = err;
+                    document.querySelector('.container').appendChild(errMsg);
+                    searchBox.value = '';
+                    setTimeout(()=>{
+                        document.getElementById('err').remove();
+                    },3000);
                 }
             })
     }else {
