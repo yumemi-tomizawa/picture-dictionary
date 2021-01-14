@@ -35,6 +35,9 @@ class UI {
                 output += `
                     <div id="pic-${index}" class="picture">
                         <img src="${pic.previewURL}">
+                        <div class="heart-box">
+                            <div class="heart"></div>
+                        </div>
                     </div>
                 `;
                 this.pictureGrid.innerHTML = output;

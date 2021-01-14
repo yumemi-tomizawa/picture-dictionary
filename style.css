@@ -169,3 +169,48 @@ img {
   object-fit: cover;
   border-radius: 30px;
 }
+
+.heart {
+  display: inline-block;
+  background: #e1e8ed;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.heart::before {
+  background: inherit;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: -50%;
+  content: "";
+  border-radius: 50%;
+}
+
+.heart::after {
+  background: inherit;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -50%;
+  left: 0;
+  content: "";
+  border-radius: 50%;
+}
+
+.picture {
+  position: relative;
+}
+
+.heart-box {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+}
+
+.heart:hover {
+  background: #d21c38;
+}
