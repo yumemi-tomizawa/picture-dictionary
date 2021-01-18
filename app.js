@@ -90,8 +90,15 @@ function clickHeart(e) {
     if(e.target.classList.contains('heart')) {
         if(e.target.classList.contains('save')){
             e.target.classList.remove('save');
+            const word = searchWord.textContent;
+            const imgURL = e.target.parentElement.parentElement.firstElementChild.src;
+            Store.removeImage(word, imgURL);
         }else {
             e.target.classList.add('save'); 
+            console.log('e:', e.target.parentElement.parentElement.firstElementChild.src);
+            const word = searchWord.textContent;
+            const imgURL = e.target.parentElement.parentElement.firstElementChild.src;
+            Store.addImage(word, imgURL);
         }
     }
 }

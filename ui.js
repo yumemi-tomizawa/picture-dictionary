@@ -31,17 +31,29 @@ class UI {
     displayPicture(pictures) {
         if(pictures.totalHits > 0) {
             let output = '';
+            const word = searchWord.textContent;
             pictures.hits.forEach((pic, index)=> {
-                output += `
-                    <div id="pic-${index}" class="picture">
-                        <img src="${pic.previewURL}">
-                        <div class="heart-box">
-                            <div class="heart"></div>
+                if(Store.findImage(word, pic.previewURL) === true){
+                    output += `
+                        <div id="pic-${index}" class="picture">
+                            <img src="${pic.previewURL}">
+                            <div class="heart-box">
+                                <div class="heart save"></div>
+                            </div>
                         </div>
-                    </div>
-                `;
-                this.pictureGrid.innerHTML = output;
+                    `;
+                }else{
+                    output += `
+                        <div id="pic-${index}" class="picture">
+                            <img src="${pic.previewURL}">
+                            <div class="heart-box">
+                                <div class="heart"></div>
+                            </div>
+                        </div>
+                    `;
+                }
             })
+            this.pictureGrid.innerHTML = output;
         }else {
             // No picture to display
             this.pictureGrid.innerHTML = `<h1>Sorry... No picture was found</h1>`
