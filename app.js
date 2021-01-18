@@ -21,6 +21,8 @@ function loadEventListners(){
     audioIcon.addEventListener('click', addAudioPlayer);
     // Add BookMark Icon 
     bookIcon.addEventListener('click', addBookMark);
+    // Heart Save Button
+    mainContent.addEventListener('click', clickHeart);
 };
 
 function searchPicture() {
@@ -82,5 +84,15 @@ function addBookMark() {
     // }else {
     //     e.target.classList.add('hidden');
     // }
+}
+
+function clickHeart(e) {
+    if(e.target.classList.contains('heart')) {
+        if(e.target.classList.contains('save')){
+            e.target.classList.remove('save');
+        }else {
+            e.target.classList.add('save'); 
+        }
+    }
 }
 
