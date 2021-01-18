@@ -14,13 +14,10 @@ class Store {
         let found = false;
         const images = Store.getImages();
         if(images !== undefined || images.length > 0) {
-            console.log('You enter');
             images.forEach(img => {
-                if(img[word] !== undefined && img[word].length > 0 ) {
-                    console.log('You enter second if');
-                    img[word].forEach( url => {
+                if(img['imgURL'] !== undefined && img['imgURL'].length > 0 ) {
+                    img['imgURL'].forEach( url => {
                         if(url === imgURL) {
-                            console.log('You final if');
                             found = true;
                         }
                     });
@@ -30,38 +27,34 @@ class Store {
         return found;
     }
 
-    // static displayImages() {
-    //     const Images = Store.getImages();
-    //     console.log('djkfja;d');
-
-    //     books.forEach( (book) => {
-    //         console.log(book);
-    //         const ui = new UI;
-    //         // Add book to UI
-    //         ui.addBooktoList(book);
-    //     });
-
-
-    // }
-
-    static addImage(word, imgURL) {
+    static addImage(word, imgURL, audioURL, wordDef) {
         const images = Store.getImages();
         if(images === undefined || images.length == 0) {
             let newWord = {};
-            newWord[word] = [imgURL];
+            newWord = {
+                'word' : word, 
+                'imgURL' : [imgURL],
+                'audio' : audioURL,
+                'def' : wordDef
+            }
             images.push(newWord);
 
         }else {
             let found = false; 
             images.forEach(img => {
-                if(img[word] !== undefined && img[word].length > 0 ) {
-                    img[word].push(imgURL);
+                if(img['word'] === word && img['imgURL'].length > 0 ) {
+                    img['imgURL'].push(imgURL);
                     found = true;
                 }
             });
             if(!found) {
                 let newWord = {};
-                newWord[word] = [imgURL];
+                newWord = {
+                    'word' : word, 
+                    'imgURL' : [imgURL],
+                    'audio' : audioURL,
+                    'def' : wordDef
+                }
                 images.push(newWord);
             }
         }
@@ -70,11 +63,14 @@ class Store {
 
     static removeImage(word, imgURL) {
         const images = Store.getImages();
-        images.forEach(img => {
-            if(img[word] !== undefined && img[word].length > 0 ) {
-                img[word].forEach( (url, index) => {
+        images.forEach((img, i) => {
+            if(img['imgURL'] !== undefined && img['imgURL'].length > 0 ) {
+                img['imgURL'].forEach( (url, index) => {
                     if(url === imgURL) {
-                        img[word].splice(index, 1);
+                        img['imgURL'].splice(index, 1);
+                        if(img['imgURL'].length === 0 ) {
+                            images.splice(i, 1); 
+                        }
                     }
                 });
             }

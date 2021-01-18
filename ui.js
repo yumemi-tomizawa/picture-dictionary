@@ -1,6 +1,7 @@
 class UI {
     constructor() {
-        this.pictureGrid = document.getElementById('picture-container');
+        this.pictureGrid = document.querySelector('.picture-container');
+        this.mainContent = document.getElementById('main-content');
     }
 
     displayDefinition(def) {
@@ -59,4 +60,47 @@ class UI {
             this.pictureGrid.innerHTML = `<h1>Sorry... No picture was found</h1>`
         }
     }
+
+    displayLikes(images) {
+        images.forEach(img => {
+           const word = img['word']; 
+           const audioURL = img['audio'];
+           const def = img['def'];
+           let output = '';
+           output = `
+                <div class="search-result" class="text-left">
+                    <h3 class="search-word">${word}</h3>
+                    <div class="audio-icon">
+                        <i class="fas fa-volume-up"></i>
+                        <audio class="audio" src="${audioURL}"></audio>
+                    </div>
+                    <div class="book-icon"><i class="fas fa-book "></i></div>
+                    <p class="word-def hidden">${def}</p>
+                </div>
+                <hr>
+                <br/>
+           `;
+           let pictures = '';
+           img['imgURL'].forEach((imgURL, index) => {
+                pictures += `
+                    <div id="pic-${index}" class="picture">
+                        <img src="${imgURL}">
+                        <div class="heart-box">
+                            <div class="heart save"></div>
+                        </div>
+                    </div>
+                `; 
+            });
+            const wrapper = document.createElement('div');
+            wrapper.innerHTML = output;
+            const pictureContainer = document.createElement('div');
+            pictureContainer.classList.add('picture-container');
+            pictureContainer.innerHTML = pictures;
+            wrapper.appendChild(pictureContainer);
+            this.mainContent.appendChild(wrapper);
+            // this.mainContent.appendChild(pictureContainer);
+        });
+    }
 }
+
+

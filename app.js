@@ -5,10 +5,10 @@ const ui = new UI();
 // UI variables
 const searchIcon = document.getElementById('search-icon');
 const searchBox = document.getElementById('search-box');
-const searchWord = document.getElementById('search-word');
-const audioIcon = document.getElementById('audio-icon');
-const bookIcon = document.getElementById('book-icon');
-const wordDef = document.getElementById('word-def');
+const searchWord = document.querySelector('.search-word');
+const audioIcon = document.querySelector('.audio-icon');
+const bookIcon = document.querySelector('.book-icon');
+const wordDef = document.querySelector('.word-def');
 const mainContent = document.getElementById('main-content');
 
 // Init EventListners
@@ -91,14 +91,18 @@ function clickHeart(e) {
         if(e.target.classList.contains('save')){
             e.target.classList.remove('save');
             const word = searchWord.textContent;
+            console.log('word:', word)
             const imgURL = e.target.parentElement.parentElement.firstElementChild.src;
+            console.log('imgURL:', imgURL)
             Store.removeImage(word, imgURL);
         }else {
             e.target.classList.add('save'); 
             console.log('e:', e.target.parentElement.parentElement.firstElementChild.src);
             const word = searchWord.textContent;
             const imgURL = e.target.parentElement.parentElement.firstElementChild.src;
-            Store.addImage(word, imgURL);
+            const audioURL = document.getElementById('audio').src;
+            const def = wordDef.textContent;
+            Store.addImage(word, imgURL, audioURL, def);
         }
     }
 }

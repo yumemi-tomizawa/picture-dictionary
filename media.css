@@ -24,15 +24,15 @@
     font-size: 1.5rem;
   }
 
-  #search-result #search-word {
+  .search-result .search-word {
     font-size: 3.2rem;
   }
-  #search-result > div {
+  .search-result > div {
     font-size: 1.8rem;
     margin-right: 10px;
   }
 
-  #search-result #word-def {
+  .search-result .word-def {
     font-size: 1.8rem;
   }
 }
